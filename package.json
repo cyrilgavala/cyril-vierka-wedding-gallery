@@ -1,6 +1,6 @@
 {
   "name": "cyril-vierka-wedding-gallery",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "axios": "^0.24.0",
