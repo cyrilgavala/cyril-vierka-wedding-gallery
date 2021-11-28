@@ -1,38 +1,105 @@
 .App {
-  text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    font-family: 'Estonia', cursive;
+    --neutral-color: #fefae0;
+    --accent-color: #002f50;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#navigation-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 150px;
+    display: grid;
+    justify-content: center;
+    align-content: space-between;
+    background-color: var(--accent-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navigation-item {
+    color: var(--neutral-color);
+    padding: 1em;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navigation-item:hover {
+    text-shadow: var(--neutral-color) 0 0 3px;
 }
 
-.App-link {
-  color: #61dafb;
+.section {
+    width: calc(100% - 150px);
+    position: relative;
+    left: 150px;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    background: url("./images/section-background.png") no-repeat;
+    background-size: cover;
+    border: var(--accent-color) 1px solid;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.section > img {
+    margin: auto;
+    width: 65%;
+    box-shadow: var(--accent-color) 0 .5rem 3rem, var(--accent-color) 0 .3rem 1rem;
+}
+
+.section-header {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+    margin: 0;
+    color: var(--accent-color);
+}
+
+.slider-wrapper {
+    height: 100%;
+    display: grid;
+    text-align: center;
+    align-content: space-between;
+}
+
+.image-wrapper {
+    width: auto;
+    height: calc(100vh - 10rem);
+    border-radius: 1rem;
+}
+
+.image-wrapper img {
+    background-color: var(--accent-color);
+    height: 100%;
+    width: auto;
+    border-radius: 1em;
+    box-shadow: var(--accent-color) 0 .5rem 3rem, var(--accent-color) 0 .3rem 1rem;
+}
+
+.buttons-wrapper {
+    width: 100%;
+    height: 4rem;
+    display: inline-flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.previous-btn, .next-btn, .start-btn, .end-btn {
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+    color: var(--accent-color);
+    border-radius: 50%;
+    border: var(--accent-color) 2px solid;
+    background-color: var(--neutral-color);
+    cursor: pointer;
+    padding-bottom: 1rem;
+    margin: .5rem;
+    transition: 200ms ease;
+}
+
+button:hover {
+    font-weight: bolder;
+    box-shadow: var(--accent-color) 0 0 10px;
 }
