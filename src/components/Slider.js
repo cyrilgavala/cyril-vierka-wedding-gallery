@@ -58,6 +58,7 @@ export default function Slider(props) {
         <div
             className={"section-header"}>{props.label}</div>
         {image !== undefined && <div className={"image-wrapper"}>{image}</div>}
+        <p className={"progress"}>{index + 1} / {numOfImages}</p>
         <div className={"buttons-wrapper"}>
             <button className={"start-btn"} onClick={start}><span>&#171;</span></button>
             <button className={"previous-btn"} onClick={previous}><span>&#8249;</span></button>

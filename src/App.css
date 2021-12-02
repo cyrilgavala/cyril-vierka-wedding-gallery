@@ -2,7 +2,7 @@
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    font-family: 'Magnolia Script', sans-serif;
+    font-family: 'Dancing Script', cursive;
     --neutral-color: #fefae0;
     --accent-color: #002f50;
 }
@@ -63,9 +63,17 @@
     align-content: space-between;
 }
 
+.progress {
+    height: min-content;
+    font-weight: bolder;
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+}
+
 .image-wrapper {
     width: auto;
-    height: calc(100vh - 10rem);
+    height: calc(100vh - 12rem);
     border-radius: 1rem;
 }
 
@@ -96,7 +104,7 @@
     background-color: var(--neutral-color);
     cursor: pointer;
     padding-bottom: 20px;
-    margin: 10px;
+    margin: 0 10px;
     transition: 200ms ease;
 }
 
