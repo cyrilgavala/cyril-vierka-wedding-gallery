@@ -15,7 +15,7 @@ body {
     --accent-color: #002f50;
 }
 
-#modal {
+#modal:focus, input:focus {
     outline: unset;
 }
 
@@ -26,7 +26,7 @@ body {
     flex-direction: column;
     background: #002f50;
     color: #fefae0;
-    position: absolute;
+    position: fixed;
     top: 40%;
     left: calc(50% - 175px);
     padding: 1rem;
@@ -45,6 +45,17 @@ body {
     background: #fefae0;
     accent-color: #002f50;
     border-radius: .5rem;
+    padding-left: .5rem;
+    font-family: 'Futura', cursive;
+}
+
+.fa-eye, .fa-eye-slash {
+    color: #002f50;
+    position: absolute;
+    top: 3rem;
+    right: 1.5rem;
+    cursor: pointer;
+    z-index: 5;
 }
 
 .modal-form label {

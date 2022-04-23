@@ -27,8 +27,7 @@ export default function Slider(props) {
                 })
         }
         loadData()
-        // eslint-disable-next-line
-    }, [index])
+    }, [props.paths, index])
 
     useEffect(() => {
         const navButtonActiveHandler = (idx) => {
@@ -38,19 +37,9 @@ export default function Slider(props) {
             document.getElementById(`${props.id}-btn-${idx}`).classList.add("active")
         }
         navButtonActiveHandler(index)
-        // eslint-disable-next-line
-    }, [index])
+    }, [props.id, numOfImages, index])
 
     const navigate = idx => setIndex(idx)
-
-    document.addEventListener("keydown", event => {
-        if (event.keyCode === 39) {
-            setIndex((index + 1) % numOfImages)
-        }
-        if (event.keyCode === 37) {
-            setIndex((index - 1 + numOfImages) % numOfImages)
-        }
-    })
 
     for (let i = 0; i < numOfImages; i++) {
         buttons.push(<button id={`${props.id}-btn-${i}`} key={`${props.id}-button-${i}`} className={"slider-btn"}
