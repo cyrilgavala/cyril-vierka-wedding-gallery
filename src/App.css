@@ -166,24 +166,18 @@ body {
     border: #002f50 solid 2px;
 }
 
-.nav-buttons-wrapper {
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .buttons-wrapper {
-    width: fit-content;
-    height: 50px;
+    width: 100%;
+    height: fit-content;
     display: flex;
     justify-content: center;
     align-content: center;
     padding: 1rem;
     flex-wrap: wrap;
-    gap: .5rem;
-    background-color: #fefae0;
+    column-gap: .5rem;
     border-radius: 1rem;
+    align-items: center;
+    background: #fefae0;
 }
 
 .slider-btn {
@@ -195,31 +189,28 @@ body {
     align-items: center;
     border-radius: .5rem;
     outline: unset;
-    border: unset;
+    border: #002f50 solid 1px;
 }
 
 .active {
     background: #fefae0;
     border: #002f50 2px solid;
+    transform: scale(1.8);
 }
 
 .slider-btn:hover, .slider-btn:focus {
     outline: unset;
     background: #fefae0;
     border: #002f50 solid 2px;
-    transform: scale(2);
+    transform: scale(2.2);
 }
 
-.previous-btn, .next-btn, .start-btn, .end-btn {
-    font-size: 25px;
+.previous-btn, .next-btn {
     width: 40px;
     height: 40px;
     color: var(--accent-color);
-    border-radius: 50%;
-    border: var(--accent-color) 2px solid;
     background-color: var(--neutral-color);
     cursor: pointer;
-    padding-bottom: 20px;
-    margin: 0 10px;
-    transition: 200ms ease;
+    border: unset;
+    border-radius: 50%;
 }

@@ -41,8 +41,8 @@ export default function App() {
         if (password !== event.target[0].value) {
             event.target.reset()
         } else {
-            setModalVisible(false)
             setSection(generateSection(tempInfo.id, tempInfo.label, tempInfo.path))
+            setModalVisible(false)
         }
     }
 
