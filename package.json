@@ -1,6 +1,6 @@
 {
   "name": "cyril-vierka-wedding-gallery",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "private": true,
   "dependencies": {
     "@mui/material": "^5.6.2",

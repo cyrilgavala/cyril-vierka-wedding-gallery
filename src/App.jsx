@@ -1,7 +1,7 @@
 import './App.css';
 import Section from "./components/Section";
 import welcomeImage from "./images/welcome-image.png"
-import {useState} from "react";
+import {useState, useRef} from "react";
 import {Modal} from '@mui/material';
 
 export default function App() {
@@ -14,7 +14,7 @@ export default function App() {
 
     const [modalVisible, setModalVisible] = useState(false)
     const [showPass, setShowPass] = useState(false)
-    const [tempInfo, setTempInfo] = useState({})
+    const tempInfo = useRef({})
     const [section, setSection] = useState(homeSection)
 
     const generateSection = (id, label, path) => <Section id={id} label={label} folderPath={path}/>
@@ -31,7 +31,7 @@ export default function App() {
         <div id={`${id}-navigation-item-${index}`} key={`${id}-navigation-item-${index}`} className={"navigation-item"}
              onClick={event => {
                  event.preventDefault()
-                 setTempInfo({id: id, label: label, path: path})
+                 tempInfo.current = {id: id, label: label, path: path}
                  setModalVisible(true)
              }}> {label} <i className="fa fa-lock"/>
         </div>
@@ -41,7 +41,7 @@ export default function App() {
         if (password !== event.target[0].value) {
             event.target.reset()
         } else {
-            setSection(generateSection(tempInfo.id, tempInfo.label, tempInfo.path))
+            setSection(generateSection(tempInfo.current.id, tempInfo.current.label, tempInfo.current.path))
             setModalVisible(false)
         }
     }

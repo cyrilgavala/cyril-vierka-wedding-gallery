@@ -2,14 +2,14 @@ import {useEffect, useState} from "react";
 import axios from "axios"
 import Slider from "./Slider";
 
-export default function Section(props) {
+export default function Section({id, label, folderPath}) {
 
     const [paths, setPaths] = useState([])
 
     useEffect(() => {
         const loadPaths = () => {
             axios.post('https://api.dropboxapi.com/2/files/list_folder', {
-                path: props.folderPath,
+                path: folderPath,
                 recursive: false,
                 include_media_info: false,
                 include_deleted: false
@@ -24,9 +24,9 @@ export default function Section(props) {
                 .catch(err => console.error(err))
         }
         loadPaths()
-    }, [props.folderPath])
+    }, [folderPath])
 
-    return <div id={props.id} className={"section"}>
-        {paths.length > 0 && <Slider id={`${props.id}-slider`} label={props.label} paths={paths}/>}
+    return <div id={id} className={"section"}>
+        {paths.length > 0 && <Slider id={`${id}-slider`} label={label} paths={paths}/>}
     </div>
 }
